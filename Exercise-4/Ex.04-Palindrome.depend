@@ -1,0 +1,62 @@
+# depslib dependency file v1.0
+1429906160 source:e:\spring-2015\spring-2015\c++\bernice\ex.04-palindrome\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<cstring>
+	"DynCharStack.h"
+
+1429906220 source:e:\spring-2015\spring-2015\c++\bernice\ex.04-palindrome\dyncharstack.cpp
+	<iostream>
+	"DynCharStack.h"
+
+1429904698 e:\spring-2015\spring-2015\c++\bernice\ex.04-palindrome\dyncharstack.h
+
+1429908468 source:e:\spring-2015\spring-2015\c++\bernice\ex.04-palindrome\dyncharqueue.cpp
+	<iostream>
+	"DynCharQueue.h"
+
+1429908338 e:\spring-2015\spring-2015\c++\bernice\ex.04-palindrome\dyncharqueue.h
+
+1429908468 source:f:\spring-2015\spring-2015\c++\bernice\ex.04-palindrome\dyncharqueue.cpp
+	<iostream>
+	"DynCharQueue.h"
+
+1429908338 f:\spring-2015\spring-2015\c++\bernice\ex.04-palindrome\dyncharqueue.h
+
+1430179966 source:f:\spring-2015\spring-2015\c++\bernice\ex.04-palindrome\dyncharstack.cpp
+	<iostream>
+	"DynCharStack.h"
+
+1430179694 f:\spring-2015\spring-2015\c++\bernice\ex.04-palindrome\dyncharstack.h
+
+1430179696 source:f:\spring-2015\spring-2015\c++\bernice\ex.04-palindrome\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<cstring>
+	"DynCharStack.h"
+	"DynCharQueue.h"
+	<iomanip>
+
+1430180506 source:g:\spring-2015\spring-2015\c++\bernice\ex.04-palindrome\dyncharqueue.cpp
+	<iostream>
+	"DynCharQueue.h"
+
+1429908338 g:\spring-2015\spring-2015\c++\bernice\ex.04-palindrome\dyncharqueue.h
+
+1430179966 source:g:\spring-2015\spring-2015\c++\bernice\ex.04-palindrome\dyncharstack.cpp
+	<iostream>
+	"DynCharStack.h"
+
+1430179694 g:\spring-2015\spring-2015\c++\bernice\ex.04-palindrome\dyncharstack.h
+
+1430179696 source:g:\spring-2015\spring-2015\c++\bernice\ex.04-palindrome\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<cstring>
+	"DynCharStack.h"
+	"DynCharQueue.h"
+	<iomanip>
+

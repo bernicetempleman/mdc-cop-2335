@@ -1,0 +1,169 @@
+/*
+Write the definition of a function named   fscopy . This function can be safely passed two  fstream objects , one opened for reading, the other for writing. Assume  that the input source is a text file consisting of a sequence of newline character -terminated lines. The function simply copies, line by line, the entire content of the data source associated with the first argument  to the data target associated with the second argument . No value  is returned.
+*/
+void fscopy(fstream &input , fstream &output)
+{
+    string buffer;
+
+    while(!input.eof()){
+        getline(input,buffer);
+        output << buffer << "\n";
+    }
+
+    input.close();
+    output.close();
+} 
+==============================
+/*
+Write the definition of a function named   fscopy that does a line-by-line copy from one stream to another. This function can be safely passed two  fstream objects , one opened for reading, the other for writing. In addition, it gets a bool argument  that is true  if the output  lines are to be numbered, and another argument , an int  that specifies line-spacing in the output .
+
+Assume  that the input source is a text file consisting of a sequence of newline character -terminated lines. The function copies, line by line, the entire content of the data source associated with the first argument  to the data target associated with the second argument . It returns the number of lines read in. If it the third parameter , the bool is true , every line that is output  is preceded by a 6-position field holding the line number (an integer ) followed by a space and then the actual line. If the last argument , the int  is 2 or more, it specifies the line spacing: for example, it is 3, there are two blank lines output  after each line printed. These blank lines are NOT numbered.
+
+*/
+
+int fscopy(fstream &myfile, fstream &outfile, bool numbered, int spacing)
+{
+ int num_line=0;
+ string line;
+
+ while(myfile.good())
+ {
+ getline(myfile, line);
+ num_line++;
+
+ if(numbered == true && line != "\n"){
+ outfile << setw(6) << num_line << " " << line;
+ }
+ else{
+ outfile << line;
+ }
+
+ for(int i = 0; i < spacing; i++){
+ outfile << '\n';
+ }
+ }
+ return num_line;
+}
+++++++++++++++++++++++++
+12.5: Customer Accounts
+ Write a program  that asks the user for the name  of a file. The program  should display the contents of the file on the screen. Each line of screen output  should be preceded with a line number, followed by a colon. The line numbering should start at 1. Here is an example:
+      1:George Rolland
+      2:127 Academy Street
+      3:Brasstown, NC 28706 
+
+ If the file's contents won't fit on a single screen, the program  should display 24 lines of output  at a time, and then pause. Each time the program  pauses, it should wait for the user to strike a key before the next 24 lines are displayed. 
+
+Prompts And Output  Labels. 
+
+
+Input Specification. 
+=======================================================
+#include <iostream>
+#include <fstream>
+#include <stdlib.h>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+ifstream file; // File stream object
+string name; // To hold the file name
+string inputLine; // To hold a line of input
+int lines = 0; // Line counter
+int lineNum = 1; // Line number to display
+
+// Get the file name.
+cout << "Enter the file name: ";
+getline(cin, name);
+
+// Open the file.
+file.open(name.c_str());
+
+// Test for errors.
+if (!file)
+{
+// There was an error so display an error
+// message and end the program.
+cout << "Error opening " << name << endl;
+exit(EXIT_FAILURE);
+}
+
+// Read the contents of the file and display
+// each line with a line number.
+// Get a line from the file.
+getline(file, inputLine, '\n');
+while (!file.fail())
+{
+
+// Display the line.
+cout << setw(3) << right << lineNum 
+<< ":" << inputLine << endl;
+
+// Update the line display counter for the
+// next line.
+lineNum++;
+
+// Update the total line counter.
+lines++;
+
+// If we've displayed the 24th line, pause
+// the screen.
+if (lines == 24)
+{
+cout << "Press ENTER to continue...";
+cin.get();
+lines = 0;
+}
+// Get a line from the file.
+getline(file, inputLine, '\n');
+}
+
+// Close the file.
+file.close();
+return 0;
+}
+==========================
+
+#include "stdafx.h"
+#include 
+ #include 
+ #include
+ using namespace std;
+ int main()
+ {char filename[30];
+ string input;
+ int i; 
+ ifstream in;
+ ofstream out; 
+ cout<<"enter input file name? ";
+ cin>>filename;
+ in.open(filename); 
+ if(in.fail()) 
+ { cout<<"input file did not open please check it\n";
+ system("pause");
+ return 1;
+ }
+ cout<<"enter output file name? ";
+ cin>>filename; 
+ out.open(filename); 
+
+ getline (in,input);
+ while(in)
+ {for(i=0;input[i]!='.';i++)
+ if(isalpha(input[i]))
+ if(i==0)
+ out.put(toupper(input[i]));
+ else
+ out.put(tolower(input[i]));
+ else
+ out.put(input[i]);
+ out<<".\n";
+ getline(in,input); 
+ } 
+ out.close();
+ in.close();
+ system("pause");
+ return 0;
+ }
+===============================
